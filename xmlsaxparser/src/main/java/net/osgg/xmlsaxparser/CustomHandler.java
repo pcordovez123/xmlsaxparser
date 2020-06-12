@@ -12,7 +12,7 @@ public class CustomHandler extends DefaultHandler {
     boolean bsalary = false;
     
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        //System.out.println("starts element:" + qName);
+        //System.out.println("(starts element:" + qName + ")");
         if (qName.equalsIgnoreCase("employee")) {
             String id = attributes.getValue("empid");
             System.out.println("empid: " + id);
@@ -49,8 +49,10 @@ public class CustomHandler extends DefaultHandler {
             bnickName = false;
         }
         if (bsalary) {
-            System.out.println("Nickname: " + new String(ch, start, length));
+            System.out.println("Salary: " + new String(ch, start, length));
+            System.out.println("");
             bsalary = false;
         }
     }
+    
 }
